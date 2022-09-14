@@ -1,10 +1,92 @@
----
-title: ART NFT |市值
-layout: ./app/layout.ejs
-engine: ejs
-current: raking
----
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    ART NFT |市值
+  </title>
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./assets/style/all.css">
+
+</head>
+
+<body>
+  <header class="bg-primary sticky-top position-relative ">
+    <div class="container-lg">
+      <!-- PC  -->
+      <nav class="navbar navbar-expand-lg text-black py-0">
+        <div class="d-flex justify-content-between align-items-center flex-wrap w-100">
+          <h1 class="mb-0 py-3 pylg-2L ps-12 ps-lg-0"><a href="./" class="d-block logo">logo</a></h1>
+          <form class="d-flex ms-auto border-lg-left align-items-center search-form d-lg-none">
+            <div class="py-lg-40 pe-lg-2L header-search">
+              <input class="p-0 border-0 bg-primary header-search-input ps-lg-5 pe-lg-4" type="search"
+                placeholder="搜尋作品名稱、藝術家名稱" aria-label="Search">
+            </div>
+            <a class="py-lg-40 pe-lg-2L text-black fw-bold" type="submit"><i
+                class="fa-solid fa-magnifying-glass"></i></a>
+
+            <button type="button" class="border-0 pe-lg-6 py-lg-5 search " data-bs-toggle="offcanvas" href="#searchCanvas" role="button" aria-controls="searchCanvas"><i class="fas fa-search"></i></button>
+            <div class="offcanvas offcanvas-top d-lg-none bg-primary" data-bs-backdrop="false" tabindex="-1" id="searchCanvas" aria-labelledby="searchCanvasLabel">
+              <div class="offcanvas-body container d-flex justify-content-between align-items-center ">
+                <div class="d-flex align-items-center">
+                  <a href="#" class="fs-3 align-bottom search-back" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fas fa-angle-left "></i></a>
+                  <input class="form-control me-2 ps-lg-6 py-lg-5 search-bar bg-primary" type="search"
+                    placeholder="搜尋作品名稱、藝術家名稱" aria-label="Search">
+                </div>
+                <a class="py-lg-40 pe-lg-2L text-black fw-bold" type="submit"><i
+                  class="fa-solid fa-magnifying-glass d-block"></i></a>
+              </div>
+            </div>
+    
+          </form>
+          <button class="navbar-toggler pe-12 pe-lg-0" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+            <form class="d-flex">
+              <div class="py-lg-40 pe-lg-2L header-search">
+                <input class="p-0 border-0 bg-primary header-search-input ps-lg-5 pe-lg-4" type="search"
+                  placeholder="搜尋作品名稱、藝術家名稱" aria-label="Search">
+              </div>
+              <a class="py-lg-40 pe-lg-2L text-black fw-bold" type="submit"><i
+                  class="fa-solid fa-magnifying-glass"></i></a>
+                  <div class="offcanvas offcanvas-top d-md-none" data-bs-backdrop="false" tabindex="-1" id="searchCanvas" aria-labelledby="searchCanvasLabel" style="visibility: hidden;" aria-hidden="true">
+                    <div class="offcanvas-body container d-flex justify-content-between">
+                      <div class="d-flex align-items-center">
+                        <a href="#" class="fs-3 align-bottom search-back" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fas fa-angle-left " aria-hidden="true"></i></a>
+                        <input class="form-control me-2 ps-lg-6 py-lg-5 search-bar" type="search" placeholder="搜尋作品名稱、藝術家名稱" aria-label="Search">
+                      </div>
+                      <button class="border-0 pe-md-6 py-md-5 search"><i class="fas fa-search" aria-hidden="true"></i></button>
+                    </div>
+                  </div>
+            </form>
+            <ul class="navbar-nav mb-lg-0 text-center text-black ">
+              <li class="nav-item"><a href="./index.html"
+                  class="nav-link explore d-block py-lg-40 px-lg-2L text-black fw-bold">探索</a></li>
+              <li class="nav-item"><a href="./raking.html"
+                  class="nav-link  d-block  text-black py-lg-40 px-lg-2L fw-bold">市值</a></li>
+              <li class="nav-item align-items-center justify-content-center mx-auto ">
+                <a href="#" class="d-flex nav-link align-items-center text-black py-lg-40 ps-lg-5 pe-lg-0 icon-wallet">
+                  <i class="fa-solid fa-wallet fs-4" data-bs-toggle="modal" data-bs-target="#wallet"></i>
+                </a>
+              </li>
+              <li>
+                <a class="btn btn-orange fs-6 text-white border border-black p-3 d-lg-none mb-4 w-100 "
+                  data-bs-toggle="modal" data-bs-target="#wallet">連結錢包</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  </header>
+  
 <main class="bg-primary">
   <section class="container mt-40 mb-40 mb-lg-7">
     <div class="text-center mb-5">
@@ -446,3 +528,80 @@ current: raking
       </table>
 </section>
 </main>
+
+    <footer class="footer text-center bg-primary ">
+      <p class="mb-0 py-4 border-top border-4">© ART NFT. All Rights Reserved</p>
+    </footer>
+
+
+
+    <div class="modal fade" id="wallet" tabindex="-1" aria-labelledby="walletLabel" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen-md-down">
+        <div class="modal-content">
+          <div class="modal-header flex-column ">
+            <h5 class="modal-title w-100 text-center position-relative" id="WalletLabel">連結你的錢包 <button type="button"
+                class="btn-close ms-auto d-inline-block position-absolute end-0" data-bs-dismiss="modal"
+                aria-label="Close"></button></h5>
+          </div>
+          <div class="modal-body">
+            <ul class="list-unstyled w-100 row row-cols-1 row-cols-lg-2 g-2">
+              <li class="col ">
+                <button type="button" class="modal-item btn border w-100 text-start d-flex align-items-center p-3"><img
+                    class="modal-icon me-4 d-block" src="./assets/images/logo/connect01.png" alt="connect01">
+                  <p class="mb-0 fm-squada d-flex justify-content-between w-100">MetaMask<i
+                      class="fas fa-check text-orange" aria-hidden="true"></i></p>
+                </button>
+              </li>
+              <li class="col ">
+                <button type="button" class="modal-item btn border w-100 text-start d-flex align-items-center p-3"><img
+                    class="modal-icon me-4 d-block" src="./assets/images/logo/connect02.png" alt="connect02">
+                  <p class="mb-0 fm-squada d-flex justify-content-between w-100">Coinbase Wallet<i
+                      class="fas fa-check text-orange" aria-hidden="true"></i></p>
+                </button>
+              </li>
+              <li class="col ">
+                <button type="button" class="modal-item btn border w-100 text-start d-flex align-items-center p-3"><img
+                    class="modal-icon me-4 d-block" src="./assets/images/logo/connect03.png" alt="connect03">
+                  <p class="mb-0 fm-squada d-flex justify-content-between w-100">WalletConnect<i
+                      class="fas fa-check text-orange" aria-hidden="true"></i></p>
+                </button>
+              </li>
+              <li class="col ">
+                <button type="button" class="modal-item btn border w-100 text-start d-flex align-items-center p-3"><img
+                    class="modal-icon me-4 d-block" src="./assets/images/logo/connect04.png" alt="connect04">
+                  <p class="mb-0 fm-squada d-flex justify-content-between w-100">Phantom<i
+                      class="fas fa-check text-orange" aria-hidden="true"></i></p>
+                </button>
+              </li>
+              <li class="col ">
+                <button type="button" class="modal-item btn border w-100 text-start d-flex align-items-center p-3"><img
+                    class="modal-icon me-4 d-block" src="./assets/images/logo/connect05.png" alt="connect05">
+                  <p class="mb-0 fm-squada d-flex justify-content-between w-100">Glow<i class="fas fa-check text-orange"
+                      aria-hidden="true"></i></p>
+                </button>
+              </li>
+              <li class="col ">
+                <button type="button" class="modal-item btn border w-100 text-start d-flex align-items-center p-3"><img
+                    class="modal-icon me-4 d-block" src="./assets/images/logo/connect06.png" alt="connect06">
+                  <p class="mb-0 fm-squada d-flex justify-content-between w-100">Fortmatic<i
+                      class="fas fa-check text-orange" aria-hidden="true"></i></p>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer d-flex justify-content-center border-0 p-0 p-lg-4 pt-lg-0">
+            <a class="d-block btn btn-orange fs-6 text-white border border-black w-100 p-3 w-lg-30 m-0">連結錢包</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="./assets/js/vendors.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="./assets/js/all.js"></script>
+</body>
+
+</html>
