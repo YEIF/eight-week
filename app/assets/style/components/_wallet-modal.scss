@@ -1,0 +1,22 @@
+.modal-icon{
+  width: 16px;
+  height: 16px;
+}
+.modal-item{
+  &:hover{
+    background: #fff;
+    border: 1px solid $orange !important;
+    color: black;
+    i{
+      visibility: visible;
+    }
+  }
+}
+.modal-body i {
+  visibility: hidden;
+}
+.btn-close{
+  @include media-breakpoint-up(lg) {
+    display: none !important;
+  }
+}

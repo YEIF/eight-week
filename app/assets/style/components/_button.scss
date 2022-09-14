@@ -1,0 +1,32 @@
+.btn-triangle  {
+  position: relative;
+  font-size: 18px;
+  line-height: 19px;
+}
+
+.btn-triangle ::after {
+  content:"";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-left: 16px transparent solid;
+  border-bottom: 16px $orange solid;
+}
+.btn-triangle :hover::after{
+  border-bottom: 16px black solid;
+}
+
+.btn-white{
+  background-color: white;
+  border:1px solid black;
+}
+.btn-white:hover{
+  background-color: $orange;
+  color: white;
+}
+
+.btn-border:hover{
+  background-color: $orange;
+  color: white;
+  border: 1px solid black;
+}
